@@ -9,7 +9,7 @@ const navigation = {
   ],
   platform: [
     { name: 'Acessar Plataforma', href: 'https://app.arremata.ai' },
-    { name: 'Cadastre-se', href: 'https://app.arremata.ai/register' },
+    { name: 'Cadastre-se', href: 'https://app.arremata.ai/login' },
     { name: 'Login', href: 'https://app.arremata.ai/login' },
   ],
   legal: [
