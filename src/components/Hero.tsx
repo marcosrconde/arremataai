@@ -1,4 +1,4 @@
-import { ArrowRight, Play, TrendingUp, Home, DollarSign } from 'lucide-react';
+import { ArrowRight, TrendingUp, Home, DollarSign } from 'lucide-react';
 
 export default function Hero() {
   return (

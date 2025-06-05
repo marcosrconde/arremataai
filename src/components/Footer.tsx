@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, ArrowRight, Heart } from 'lucide-react';
+import { Mail, Phone, ArrowRight, Heart } from 'lucide-react';
 
 const navigation = {
   main: [
@@ -10,13 +10,11 @@ const navigation = {
   platform: [
     { name: 'Acessar Plataforma', href: 'https://app.arremata.ai' },
     { name: 'Cadastre-se', href: 'https://app.arremata.ai/login' },
-    { name: 'Login', href: 'https://app.arremata.ai/login' },
-    { name: 'Suporte', href: '#' },
+    { name: 'Login', href: 'https://app.arremata.ai/login' }
   ],
   legal: [
     { name: 'Política de Privacidade', href: '#' },
-    { name: 'Termos de Uso', href: '#' },
-    { name: 'Cookies', href: '#' },
+    { name: 'Termos de Uso', href: '#' }
   ],
 };
 
@@ -30,14 +28,8 @@ const contactInfo = [
   {
     icon: Phone,
     label: 'Telefone',
-    value: '+55 (11) 9999-9999',
-    href: 'tel:+5511999999999'
-  },
-  {
-    icon: MapPin,
-    label: 'Endereço',
-    value: 'São Paulo, SP - Brasil',
-    href: '#'
+    value: '+55 (11) 94509-1241',
+    href: 'https://api.whatsapp.com/send?phone=5511945091241&text=Eu%20vim%20atrav%C3%A9s%20do%20arremata.ai.%20Quero%20saber%20mais%20sobre%20a%20assinatura%20do%20plano%20GOLD'
   }
 ];
 
@@ -144,32 +136,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        
-        {/* Newsletter section */}
-        <div className="py-8 border-t border-secondary-700">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="mb-4 md:mb-0">
-              <h4 className="text-lg font-semibold text-white mb-2">
-                Fique por dentro das melhores oportunidades
-              </h4>
-              <p className="text-secondary-300 text-sm">
-                Receba alertas sobre novos leilões e dicas exclusivas
-              </p>
-            </div>
-            
-            <div className="flex w-full md:w-auto">
-              <input
-                type="email"
-                placeholder="Seu melhor email"
-                className="flex-1 md:w-64 px-4 py-3 bg-secondary-800 border border-secondary-600 rounded-l-lg text-white placeholder-secondary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              />
-              <button className="px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-medium rounded-r-lg hover:from-primary-600 hover:to-primary-700 transition-all duration-200 transform hover:scale-105">
-                Inscrever
-              </button>
-            </div>
-          </div>
-        </div>
-        
+                    
         {/* Bottom section */}
         <div className="py-8 border-t border-secondary-700">
           <div className="flex flex-col md:flex-row items-center justify-between">
