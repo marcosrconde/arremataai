@@ -1,83 +1,189 @@
-import { Building2 } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight, Heart } from 'lucide-react';
 
 const navigation = {
   main: [
     { name: 'Recursos', href: '#features' },
     { name: 'Como Funciona', href: '#how-it-works' },
     { name: 'Benefícios', href: '#benefits' },
-    { name: 'Preço', href: '#pricing' },
+    { name: 'Preços', href: '#pricing' },
   ],
   platform: [
     { name: 'Acessar Plataforma', href: 'https://app.arremata.ai' },
     { name: 'Cadastre-se', href: 'https://app.arremata.ai/login' },
     { name: 'Login', href: 'https://app.arremata.ai/login' },
+    { name: 'Suporte', href: '#' },
   ],
   legal: [
     { name: 'Política de Privacidade', href: '#' },
     { name: 'Termos de Uso', href: '#' },
+    { name: 'Cookies', href: '#' },
   ],
 };
 
+const contactInfo = [
+  {
+    icon: Mail,
+    label: 'Email',
+    value: 'contato@arremata.ai',
+    href: 'mailto:contato@arremata.ai'
+  },
+  {
+    icon: Phone,
+    label: 'Telefone',
+    value: '+55 (11) 9999-9999',
+    href: 'tel:+5511999999999'
+  },
+  {
+    icon: MapPin,
+    label: 'Endereço',
+    value: 'São Paulo, SP - Brasil',
+    href: '#'
+  }
+];
+
 export default function Footer() {
   return (
-    <footer className="bg-[#19363B]">
-      <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center mb-8">
-          <img 
-            src="https://storage.googleapis.com/buildship-t31824-us-central1/img/Asset 3_ARREMATAAI.png" 
-            alt="Arremata.ai Logo" 
-            className="h-8"
-          />
+    <footer className="gradient-bg relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-secondary-500/10 rounded-full blur-3xl"></div>
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main footer content */}
+        <div className="py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+            {/* Company info */}
+            <div className="lg:col-span-1">
+              <div className="flex items-center mb-6">
+                <img 
+                  src="https://storage.googleapis.com/buildship-t31824-us-central1/img/Asset 3_ARREMATAAI.png" 
+                  alt="Arremata.ai Logo" 
+                  className="h-8 transition-transform hover:scale-105"
+                />
+              </div>
+              
+              <p className="text-secondary-300 leading-relaxed mb-6">
+                A plataforma mais avançada para encontrar e analisar oportunidades em leilões de imóveis no Brasil.
+              </p>
+              
+              {/* Contact info */}
+              <div className="space-y-3">
+                {contactInfo.map((contact, index) => (
+                  <a
+                    key={index}
+                    href={contact.href}
+                    className="flex items-center text-secondary-300 hover:text-primary-400 transition-colors duration-200 group"
+                  >
+                    <contact.icon className="w-4 h-4 mr-3 group-hover:scale-110 transition-transform duration-200" />
+                    <span className="text-sm">{contact.value}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+            
+            {/* Navigation links */}
+            <div className="lg:col-span-3">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                  <h3 className="text-sm font-semibold text-primary-400 tracking-wider uppercase mb-6">
+                    Navegação
+                  </h3>
+                  <ul className="space-y-4">
+                    {navigation.main.map((item) => (
+                      <li key={item.name}>
+                        <a 
+                          href={item.href} 
+                          className="text-secondary-300 hover:text-primary-400 transition-colors duration-200 flex items-center group"
+                        >
+                          <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <h3 className="text-sm font-semibold text-primary-400 tracking-wider uppercase mb-6">
+                    Plataforma
+                  </h3>
+                  <ul className="space-y-4">
+                    {navigation.platform.map((item) => (
+                      <li key={item.name}>
+                        <a 
+                          href={item.href} 
+                          className="text-secondary-300 hover:text-primary-400 transition-colors duration-200 flex items-center group"
+                        >
+                          <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <h3 className="text-sm font-semibold text-primary-400 tracking-wider uppercase mb-6">
+                    Legal
+                  </h3>
+                  <ul className="space-y-4">
+                    {navigation.legal.map((item) => (
+                      <li key={item.name}>
+                        <a 
+                          href={item.href} 
+                          className="text-secondary-300 hover:text-primary-400 transition-colors duration-200 flex items-center group"
+                        >
+                          <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         
-        <nav className="grid grid-cols-2 gap-8 md:grid-cols-3 mb-8" aria-label="Footer">
-          <div>
-            <h3 className="text-sm font-semibold text-[#00D866] tracking-wider uppercase">
-              Navegação
-            </h3>
-            <ul className="mt-4 space-y-4">
-              {navigation.main.map((item) => (
-                <li key={item.name}>
-                  <a href={item.href} className="text-base text-[#E1F3E5] hover:text-[#00D866]">
-                    {item.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+        {/* Newsletter section */}
+        <div className="py-8 border-t border-secondary-700">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="mb-4 md:mb-0">
+              <h4 className="text-lg font-semibold text-white mb-2">
+                Fique por dentro das melhores oportunidades
+              </h4>
+              <p className="text-secondary-300 text-sm">
+                Receba alertas sobre novos leilões e dicas exclusivas
+              </p>
+            </div>
+            
+            <div className="flex w-full md:w-auto">
+              <input
+                type="email"
+                placeholder="Seu melhor email"
+                className="flex-1 md:w-64 px-4 py-3 bg-secondary-800 border border-secondary-600 rounded-l-lg text-white placeholder-secondary-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              />
+              <button className="px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-medium rounded-r-lg hover:from-primary-600 hover:to-primary-700 transition-all duration-200 transform hover:scale-105">
+                Inscrever
+              </button>
+            </div>
           </div>
-          <div>
-            <h3 className="text-sm font-semibold text-[#00D866] tracking-wider uppercase">
-              Plataforma
-            </h3>
-            <ul className="mt-4 space-y-4">
-              {navigation.platform.map((item) => (
-                <li key={item.name}>
-                  <a href={item.href} className="text-base text-[#E1F3E5] hover:text-[#00D866]">
-                    {item.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold text-[#00D866] tracking-wider uppercase">
-              Legal
-            </h3>
-            <ul className="mt-4 space-y-4">
-              {navigation.legal.map((item) => (
-                <li key={item.name}>
-                  <a href={item.href} className="text-base text-[#E1F3E5] hover:text-[#00D866]">
-                    {item.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </nav>
+        </div>
         
-        <p className="mt-8 text-center text-base text-[#E1F3E5]">
-          © {new Date().getFullYear()} Arremata.ai. Todos os direitos reservados.
-        </p>
+        {/* Bottom section */}
+        <div className="py-8 border-t border-secondary-700">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <p className="text-secondary-400 text-sm mb-4 md:mb-0">
+              © {new Date().getFullYear()} Arremata.ai. Todos os direitos reservados.
+            </p>
+            
+            <div className="flex items-center text-secondary-400 text-sm">
+              <span>Feito com</span>
+              <Heart className="w-4 h-4 mx-1 text-red-500 fill-current" />
+              <span>no Brasil</span>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );
