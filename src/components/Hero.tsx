@@ -38,12 +38,8 @@ export default function Hero() {
                     Começar Agora
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
-                  
-                  <button className="btn-secondary">
-                    <Play className="mr-2 h-5 w-5" />
-                    Ver Demo
-                  </button>
-                </div>
+                 
+               </div>
                 
                 {/* Stats */}
                 <div className="mt-12 grid grid-cols-3 gap-4 sm:gap-6">

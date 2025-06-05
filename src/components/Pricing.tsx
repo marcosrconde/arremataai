@@ -139,7 +139,7 @@ export default function Pricing() {
                 {/* Pricing */}
                 <div className="mb-6">
                   <div className="flex items-baseline">
-                  <span className="text-secondary-400">{isAnnual ? 'equivalente a  ' : ''}</span>
+                  <span className="text-secondary-400">{isAnnual && plan.name === 'GOLD' ? 'equivalente a  ' : ''}</span>
                     <span className="text-4xl font-bold text-secondary-900 ml-3">
                       {plan.name === 'GOLD' 
                         ? (isAnnual ? plan.annualPrice : plan.monthlyPrice)
