@@ -1,4 +1,9 @@
 import { Mail, Phone, ArrowRight, Heart } from 'lucide-react';
+import { useState } from 'react';
+import Modal from './Modal';
+import PrivacyPolicy from './PrivacyPolicy';
+import TermsOfService from './TermsOfService';
+import { LegalItem, NavigationItem, ContactInfo } from '../types';
 
 const navigation = {
   main: [
@@ -6,19 +11,19 @@ const navigation = {
     { name: 'Como Funciona', href: '#how-it-works' },
     { name: 'Benefícios', href: '#benefits' },
     { name: 'Preços', href: '#pricing' },
-  ],
+  ] as NavigationItem[],
   platform: [
     { name: 'Acessar Plataforma', href: 'https://app.arremata.ai' },
     { name: 'Cadastre-se', href: 'https://app.arremata.ai/login' },
     { name: 'Login', href: 'https://app.arremata.ai/login' }
-  ],
+  ] as NavigationItem[],
   legal: [
-    { name: 'Política de Privacidade', href: '#' },
-    { name: 'Termos de Uso', href: '#' }
-  ],
+    { name: 'Política de Privacidade', action: 'privacy' },
+    { name: 'Termos de Uso', action: 'terms' }
+  ] as LegalItem[],
 };
 
-const contactInfo = [
+const contactInfo: ContactInfo[] = [
   {
     icon: Mail,
     label: 'Email',
@@ -34,6 +39,17 @@ const contactInfo = [
 ];
 
 export default function Footer() {
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+  const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
+
+  const handleLegalClick = (action: string) => {
+    if (action === 'privacy') {
+      setIsPrivacyModalOpen(true);
+    } else if (action === 'terms') {
+      setIsTermsModalOpen(true);
+    }
+  };
+
   return (
     <footer className="gradient-bg relative overflow-hidden">
       {/* Background decoration */}
@@ -121,13 +137,13 @@ export default function Footer() {
                   <ul className="space-y-4">
                     {navigation.legal.map((item) => (
                       <li key={item.name}>
-                        <a 
-                          href={item.href} 
-                          className="text-secondary-300 hover:text-primary-400 transition-colors duration-200 flex items-center group"
+                        <button 
+                          onClick={() => handleLegalClick(item.action)}
+                          className="text-secondary-300 hover:text-primary-400 transition-colors duration-200 flex items-center group text-left"
                         >
                           <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                           {item.name}
-                        </a>
+                        </button>
                       </li>
                     ))}
                   </ul>
@@ -152,6 +168,23 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Modals */}
+      <Modal
+        isOpen={isPrivacyModalOpen}
+        onClose={() => setIsPrivacyModalOpen(false)}
+        title="Política de Privacidade"
+      >
+        <PrivacyPolicy />
+      </Modal>
+
+      <Modal
+        isOpen={isTermsModalOpen}
+        onClose={() => setIsTermsModalOpen(false)}
+        title="Termos de Uso"
+      >
+        <TermsOfService />
+      </Modal>
     </footer>
   );
 }
