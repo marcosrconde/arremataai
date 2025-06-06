@@ -66,8 +66,8 @@ export default function TermsOfService() {
             <div>
               <h5 className="font-medium text-secondary-800">4.1 Criação de Conta</h5>
               <p>
-                Para acessar determinados recursos, você deve criar uma conta fornecendo 
-                informações precisas e completas.
+                Para acessar os recursos da plataforma, mesmo no plano gratuito, você deve criar uma conta fornecendo 
+                todas as informações do formulário de cadastro de forma precisa e completa.
               </p>
             </div>
             
@@ -161,6 +161,9 @@ export default function TermsOfService() {
             <li>Adequação para fins específicos</li>
             <li>Ausência de erros ou falhas</li>
           </ul>
+          <p className="mb-3">
+            A plataforma ArremataAI não se responsabiliza por quaisquer danos, perdas ou prejuízos decorrentes do uso da plataforma, incluindo perdas associadas a qualquer negócio imobiliário realizado pelo usuário cuja informação tenha sido obtida através da plataforma.
+          </p>
         </div>
 
         <div>
@@ -215,9 +218,9 @@ export default function TermsOfService() {
             Para dúvidas sobre estes termos, entre em contato:
           </p>
           <ul className="list-none space-y-1">
-            <li><strong>E-mail:</strong> legal@arremata.ai</li>
-            <li><strong>Telefone:</strong> (11) 99999-9999</li>
-            <li><strong>Endereço:</strong> São Paulo, SP</li>
+          <li><strong>E-mail:</strong> contato@arremata.ai</li>
+            <li><strong>Telefone:</strong> (21) 99856-8900</li>
+            <li><strong>Endereço:</strong> Al. Rio Negro, 1030 - Barueri, SP</li>
           </ul>
         </div>
 

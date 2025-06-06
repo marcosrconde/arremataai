@@ -132,9 +132,9 @@ export default function PrivacyPolicy() {
             entre em contato conosco:
           </p>
           <ul className="list-none space-y-1">
-            <li><strong>E-mail:</strong> privacidade@arremata.ai</li>
-            <li><strong>Telefone:</strong> (11) 99999-9999</li>
-            <li><strong>Endereço:</strong> São Paulo, SP</li>
+            <li><strong>E-mail:</strong> contato@arremata.ai</li>
+            <li><strong>Telefone:</strong> (21) 99856-8900</li>
+            <li><strong>Endereço:</strong> Al. Rio Negro, 1030 - Barueri, SP</li>
           </ul>
         </div>
 
