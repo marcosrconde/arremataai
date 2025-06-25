@@ -28,7 +28,7 @@ const plans: Plan[] = [
     features: [
       'Acesso a todos os imóveis Caixa',
       'Acesso à busca avançada - limite de 10 buscas/dia',
-      'Salvar e manter 1 imóvel na carteira de análise com checklist',
+      'Salvar e manter 1 imóvel na carteira de análise com checklist simples',
       'Salvar 1 filtro preferido (sem alerta por email)',
       'Suporte por email'
     ],
@@ -56,8 +56,10 @@ const plans: Plan[] = [
     description: 'Para investidores sérios',
     features: [
       'Acesso completo a toda a base de imóveis',
-      'Salvar imóveis na carteira de análise com checklist - ILIMITADO',
-      'Salvar até 10 filtros com Alertas automáticos por email',
+      'Assistende de garimpo (com IA) - monte filtros a partir de prompts em linguagem natural',
+      'Salvar imóveis na carteira de análise com checklist completo - ILIMITADO',
+      'Salvar fitros ILIMITADO',
+      'Até 10 alertas por email',
       'Calculadora de viabilidade integrada ao checklist- ILIMITADO',
       'Extração de dados da documentos (matrícula e edital) com IA',
       'Exportação de listas de imóveis para Excel',
