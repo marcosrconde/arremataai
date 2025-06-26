@@ -44,7 +44,7 @@ const plans: Plan[] = [
     color: 'from-secondary-500 to-secondary-600',
     icon: Zap,
     ctaText: 'Começar Grátis',
-    ctaLink: 'https://app.arremata.ai/register'
+    ctaLink: 'https://app.arremata.ai/login'
   },
   {
     name: 'GOLD',
@@ -71,7 +71,7 @@ const plans: Plan[] = [
     color: 'from-primary-500 to-primary-600',
     icon: Star,
     ctaText: 'Começar com GOLD',
-    ctaLink: 'https://app.arremata.ai/checkout/gold'
+    ctaLink: 'https://clkdmg.site/subscribe/oferta-de-lancamento-gold-anual'
   },
   {
     name: 'DIAMOND',
