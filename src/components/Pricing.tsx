@@ -103,7 +103,7 @@ export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(true);
   const [showInterestPopup, setShowInterestPopup] = useState(false);
   const [formData, setFormData] = useState({
-    nome: '',
+    name: '',
     email: '',
     whatsapp: ''
   });
@@ -136,7 +136,7 @@ export default function Pricing() {
       if (response.ok) {
         alert('Obrigado pelo seu interesse! Entraremos em contato em breve.');
         setShowInterestPopup(false);
-        setFormData({ nome: '', email: '', whatsapp: '' });
+        setFormData({ name: '', email: '', whatsapp: '' });
       } else {
         throw new Error('Erro ao enviar dados');
       }
