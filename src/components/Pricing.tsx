@@ -339,6 +339,7 @@ export default function Pricing() {
                     ) : (
                       <a
                         href={plan.ctaLink}
+                        target="_blank"
                         className={`block w-full text-center py-4 px-6 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 ${
                           plan.popular
                             ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-lg hover:shadow-xl'
