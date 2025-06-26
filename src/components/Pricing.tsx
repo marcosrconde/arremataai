@@ -103,7 +103,7 @@ export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(true);
   const [showInterestPopup, setShowInterestPopup] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
+    nome: '',
     email: '',
     whatsapp: ''
   });
@@ -120,7 +120,7 @@ export default function Pricing() {
 
     try {
       // Webhook para n8n - SUBSTITUA PELA SUA URL
-      const response = await fetch('https://your-n8n-webhook-url.com/webhook/diamond-interest', {
+      const response = await fetch('https://n8n-n8n.apuc7z.easypanel.host/webhook/c93b6a0f-ba48-4b5e-adc1-114b9e27cfbc', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -136,7 +136,7 @@ export default function Pricing() {
       if (response.ok) {
         alert('Obrigado pelo seu interesse! Entraremos em contato em breve.');
         setShowInterestPopup(false);
-        setFormData({ name: '', email: '', whatsapp: '' });
+        setFormData({ nome: '', email: '', whatsapp: '' });
       } else {
         throw new Error('Erro ao enviar dados');
       }
