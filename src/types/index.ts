@@ -2,7 +2,8 @@ import { LucideIcon } from 'lucide-react';
 
 export interface LegalItem {
   name: string;
-  action: string;
+  action?: string;
+  href?: string;
 }
 
 export interface NavigationItem {

@@ -1,7 +1,6 @@
-import { Mail, Phone, ArrowRight, Heart } from 'lucide-react';
 import { useState } from 'react';
+import { Mail, Phone, ArrowRight, Heart } from './Icons';
 import Modal from './Modal';
-import PrivacyPolicy from './PrivacyPolicy';
 import TermsOfService from './TermsOfService';
 import { LegalItem, NavigationItem, ContactInfo } from '../types';
 
@@ -18,7 +17,7 @@ const navigation = {
     { name: 'Login', href: 'https://app.arremata.ai/login' }
   ] as NavigationItem[],
   legal: [
-    { name: 'Política de Privacidade', action: 'privacy' },
+    { name: 'Política de Privacidade', href: '/privacy-policy' },
     { name: 'Termos de Uso', action: 'terms' }
   ] as LegalItem[],
 };
@@ -39,13 +38,10 @@ const contactInfo: ContactInfo[] = [
 ];
 
 export default function Footer() {
-  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
   const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
 
   const handleLegalClick = (action: string) => {
-    if (action === 'privacy') {
-      setIsPrivacyModalOpen(true);
-    } else if (action === 'terms') {
+    if (action === 'terms') {
       setIsTermsModalOpen(true);
     }
   };
@@ -137,13 +133,23 @@ export default function Footer() {
                   <ul className="space-y-4">
                     {navigation.legal.map((item) => (
                       <li key={item.name}>
-                        <button 
-                          onClick={() => handleLegalClick(item.action)}
-                          className="text-secondary-300 hover:text-primary-400 transition-colors duration-200 flex items-center group text-left"
-                        >
-                          <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                          {item.name}
-                        </button>
+                        {item.href ? (
+                          <a 
+                            href={item.href} 
+                            className="text-secondary-300 hover:text-primary-400 transition-colors duration-200 flex items-center group"
+                          >
+                            <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                            {item.name}
+                          </a>
+                        ) : (
+                          <button 
+                            onClick={() => item.action && handleLegalClick(item.action)}
+                            className="text-secondary-300 hover:text-primary-400 transition-colors duration-200 flex items-center group text-left"
+                          >
+                            <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                            {item.name}
+                          </button>
+                        )}
                       </li>
                     ))}
                   </ul>
@@ -170,14 +176,6 @@ export default function Footer() {
       </div>
 
       {/* Modals */}
-      <Modal
-        isOpen={isPrivacyModalOpen}
-        onClose={() => setIsPrivacyModalOpen(false)}
-        title="Política de Privacidade"
-      >
-        <PrivacyPolicy />
-      </Modal>
-
       <Modal
         isOpen={isTermsModalOpen}
         onClose={() => setIsTermsModalOpen(false)}
